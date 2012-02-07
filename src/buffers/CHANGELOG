@@ -1,0 +1,6 @@
+Changelog of the reboost buffers
+
+2012-02-07; author: Sebastian Mies 
++ Message compaction when no. of buffers are depleted
++ Shared buffer concatenation using operator+
++ FreeBSD license header
