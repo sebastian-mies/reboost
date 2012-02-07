@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
-// Part  of  the  re:boost project  (http://reboost.org).  Released under the
+// Part of reboost (http://reboost.org).  Released under the
 // BSD 2-clause license (http://www.opensource.org/licenses/bsd-license.php).
-// Copyright 2012, Sebastian Mies <mies@reboost.org>.    All rights reserved.
+// Copyright 2012, Sebastian Mies <mies@reboost.org> --- All rights reserved.
 //-----------------------------------------------------------------------------
 
 #include <iostream>
