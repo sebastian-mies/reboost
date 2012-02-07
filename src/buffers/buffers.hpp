@@ -4,23 +4,11 @@
 // Copyright 2012, Sebastian Mies <mies@reboost.org> --- All rights reserved.
 //-----------------------------------------------------------------------------
 
+#ifndef REBOOST_BUFFERS_HPP_
+#define REBOOST_BUFFERS_HPP_
+
+#include "buffer.hpp"
 #include "shared_buffer.hpp"
-#include <iostream>
+#include "message.hpp"
 
-namespace reboost {
-
-using namespace std;
-
-void shared_buffer_t::onexit() {
-	if (allocated_buffers != 0)
-		cerr << "shared_buffer_t: " << allocated_buffers << " leaked buffers." << endl;
-}
-
-size_t shared_buffer_t::init() {
-	atexit(&shared_buffer_t::onexit);
-	return 0;
-}
-
-size_t shared_buffer_t::allocated_buffers = init();
-
-}
+#endif /* REBOOST_BUFFERS_HPP_ */

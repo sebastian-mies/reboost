@@ -1,16 +1,23 @@
+//-----------------------------------------------------------------------------
+// Part of the reboost (http://reboost.org).  Released under the
+// BSD 2-clause license (http://www.opensource.org/licenses/bsd-license.php).
+// Copyright 2012, Sebastian Mies <mies@reboost.org> --- All rights reserved.
+//-----------------------------------------------------------------------------
+
 #ifndef BUFFER_HPP_
 #define BUFFER_HPP_
 
-#include<assert.h>
+#include<cassert>
 #include<iostream>
+
+namespace reboost {
 
 /// buffer size and octet
 typedef size_t bsize_t;
 typedef unsigned char boctet_t;
 
-
 /**
- * A basic buffer. No strings attached.
+ * A basic buffer.
  *
  * @author Sebastian Mies <mies@cpptools.org>
  */
@@ -178,5 +185,7 @@ public:
 };
 
 std::ostream& operator<<( std::ostream& os, const buffer_t& buf );
+
+}
 
 #endif /* BUFFER_HPP_ */

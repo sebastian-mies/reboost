@@ -1,13 +1,19 @@
-#ifndef MESSAGE_HPP_
-#define MESSAGE_HPP_
+//-----------------------------------------------------------------------------
+// Part of the reboost (http://reboost.org).  Released under the
+// BSD 2-clause license (http://www.opensource.org/licenses/bsd-license.php).
+// Copyright 2012, Sebastian Mies <mies@reboost.org> --- All rights reserved.
+//-----------------------------------------------------------------------------
+
+#ifndef REBOOST_MESSAGE_HPP_
+#define REBOOST_MESSAGE_HPP_
 
 #include<boost/thread.hpp>
 #include<boost/shared_ptr.hpp>
-#include<cstdlib>
 #include<cstring>
 
 #include "shared_buffer.hpp"
 
+namespace reboost {
 
 /// message size type
 typedef signed char mlength_t;
@@ -15,9 +21,9 @@ typedef signed char mlength_t;
 /// maximum number of buffers per message (default is 8)
 const mlength_t message_max_buffers = (1L << 3);
 
-//! Copy-on-write limited message buffers.
+//! A Copy-on-Write Message with Shared Buffers.
 /**
- * Copy-on-write limited message buffers.
+ * A Copy-on-Write Message with Shared Buffers.
  *
  * A message holds a limited (defined by <code>message_max_buffers</code>)
  * number of shared buffers. One can add new buffers and messages in front and
@@ -25,7 +31,7 @@ const mlength_t message_max_buffers = (1L << 3);
  * <code>message_max_buffers</code>, then the two smallest successive buffers
  * are compacted to one buffer.
  *
- * @author Sebastian Mies <mies@cpptools.org>
+ * @author Sebastian Mies <mies@reboost.org>
  */
 class message_t {
 private:
@@ -56,54 +62,66 @@ private:
 	};
 
 public:
-	// create a new message
+	/// Create a new message
 	inline message_t() :
 		imsg() {
 	}
 
-	// create a new message
+	/// Copy message
 	inline message_t(const message_t& msg) :
 		imsg(msg.imsg) {
 		imsg->owner = NULL;
 	}
 
-	/// Linearizes the message
+	/// Linearize message
 	inline operator shared_buffer_t() const {
 		return linearize();
 	}
 
-	/// Assigns a new message
+	/// Assign another message
 	inline message_t& operator=(const message_t& msg) {
+		msg.imsg->owner = NULL;
 		imsg = msg.imsg;
-		imsg->owner = NULL;
 		return *this;
 	}
 
-	/// adds a buffer at the end of the message
+	/// Adds a shared buffer of given site at the end
+	inline shared_buffer_t& push_back( bsize_t size ) {
+		shared_buffer_t b(size); push_back(b);
+		return imsg->at(-1);
+	}
+
+	/// Adds a buffer at the end of the message
 	inline void push_back(const shared_buffer_t& buf) {
 		own().push_back(buf);
 	}
 
-	/// adds a message at the end of the message
+	/// Adds a message at the end of the message
 	inline void push_back(const message_t& msg) {
 		own();
 		for (mlength_t i = 0; i < msg.length(); i++)
 			push_back(msg[i]);
 	}
 
-	/// adds a buffer at the front of the messsage
+	/// Adds a shared buffer of given size at the front
+	inline shared_buffer_t& push_front( bsize_t size ) {
+		shared_buffer_t b(size); push_front(b);
+		return imsg->at(0);
+	}
+
+	/// Adds a buffer at the front of the messsage
 	inline void push_front(const shared_buffer_t& buf) {
 		own().push_front(buf);
 	}
 
-	/// adds a message at the end of the message
+	/// Adds a message at the end of the message
 	inline void push_front(const message_t& msg) {
 		own();
 		for (mlength_t i = msg.length() - 1; i != 0; i--)
 			push_front(msg[i]);
 	}
 
-	/// removes a buffer from the end of the message
+	/// Removes a buffer from the end of the message
 	inline shared_buffer_t pop_back() {
 		return own().pop_back();
 	}
@@ -136,7 +154,7 @@ public:
 		return imsg->at(idx);
 	}
 
-	/// returns the constant buffer at the given index.
+	/// Returns the constant buffer at the given index.
 	inline const shared_buffer_t& operator[](mlength_t idx) const {
 		return at(idx);
 	}
@@ -245,14 +263,14 @@ private:
 
 		inline void push_back(const shared_buffer_t& buf) {
 			if (buf.size() == 0) return;
-			if (length==message_max_buffers) compact();
+			if (length == message_max_buffers) compact();
 			at(length) = buf;
 			length++;
 		}
 
 		inline void push_front(const shared_buffer_t& buf) {
 			if (buf.size() == 0) return;
-			if (length==message_max_buffers) compact();
+			if (length == message_max_buffers) compact();
 			index--;
 			length++;
 			at(0) = buf;
@@ -339,4 +357,6 @@ inline message_t operator+(const shared_buffer_t& lhs,
 
 std::ostream& operator<<(std::ostream&, const message_t);
 
-#endif /* MESSAGE_HPP_ */
+} /* namespace reboost */
+
+#endif /* REBOOST_MESSAGE_HPP_ */

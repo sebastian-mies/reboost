@@ -1,22 +1,28 @@
-#ifndef SHARED_BUFFER_HPP_
-#define SHARED_BUFFER_HPP_
+//-----------------------------------------------------------------------------
+// Part of the reboost (http://reboost.org).  Released under the
+// BSD 2-clause license (http://www.opensource.org/licenses/bsd-license.php).
+// Copyright 2012, Sebastian Mies <mies@reboost.org> --- All rights reserved.
+//-----------------------------------------------------------------------------
 
-#include <stdlib.h>
+#ifndef REBOOST_SHARED_BUFFER_HPP_
+#define REBOOST_SHARED_BUFFER_HPP_
+
 #include <cstring>
-#include <memory>
-
 #include <boost/shared_ptr.hpp>
 
 #include "buffer.hpp"
 
+namespace reboost {
+
 /**
- * A simple shared buffer. Uses shared_ptr and default allocator.
- * Drops an error message if buffers leaked at the end of the program.
+ * A simple shared buffer.
  *
- * When not shared, a buffer is writable. After the buffer is shared,
- * the buffer is immutable.
+ * Important: if not shared, a buffer is writable. After the buffer is shared,
+ * the buffer is immutable. It uses shared_ptr/default allocators and prints
+ * error messages to <code>cerr</code> if buffers leaked at the end of the
+ * program.
  *
- * @author Sebastian Mies <mies@cpptools.org>
+ * @author Sebastian Mies <mies@reboost.org>
  */
 class shared_buffer_t: public buffer_t {
 	typedef shared_buffer_t self;
@@ -109,6 +115,14 @@ public:
 		return parent.unique();
 	}
 
+	/// makes the buffer unique / not shared by copying the contents
+	inline void make_unique() {
+		if (is_unique()) return;
+		boost::shared_ptr<deleteable_buffer> old = parent;
+		parent.reset(new deleteable_buffer(old->size()));
+		old->copy_to(*parent,0);
+	}
+
 	/// returns a pointer to mutable data, if shared_buffer is not shared yet.
 	inline boctet_t * mutable_data() {
 		assert(parent.unique());
@@ -131,4 +145,6 @@ public:
 	}
 };
 
-#endif /* SHARED_BUFFER_HPP_ */
+} /* namespace reboost */
+
+#endif /* REBOOST_SHARED_BUFFER_HPP_ */

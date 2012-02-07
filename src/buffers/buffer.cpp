@@ -1,8 +1,15 @@
+//-----------------------------------------------------------------------------
+// Part of the reboost (http://reboost.org).  Released under the
+// BSD 2-clause license (http://www.opensource.org/licenses/bsd-license.php).
+// Copyright 2012, Sebastian Mies <mies@reboost.org> --- All rights reserved.
+//-----------------------------------------------------------------------------
 
 #include <cstdio>
 #include <iostream>
 
 #include "buffer.hpp"
+
+namespace reboost {
 
 std::ostream& operator<<( std::ostream& os, const buffer_t& buf ) {
 	os << "{";
@@ -31,3 +38,5 @@ std::ostream& operator<<( std::ostream& os, const buffer_t& buf ) {
 	os << "}";
 	return os;
 }
+
+} /* namespace reboost */
