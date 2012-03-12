@@ -14,16 +14,10 @@ using namespace std;
 using namespace reboost;
 
 int main() {
-	shared_buffer_t b1 = "Hallo";
-	b1.mutable_data()[0]='W';
-	b1 = b1 + " Welt!";
-	cout << b1 << endl;
-
 	message_t m = (shared_buffer_t("Hello") + "World");
 	cout << m << endl;
-	m.push_back("of mine");
+	m.push_back("Hello again!");
 	message_t cm = m;
 	cout << m << endl;
-
 	return 0;
 }
