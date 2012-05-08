@@ -16,104 +16,53 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197" name="Release" parent="cdt.managedbuild.config.llvm.clang.linux.exe.release">
 					<folderInfo id="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.linux.base.891959686" name="LLVM with Clang (Linux)" resourceTypeBasedDiscovery="true" superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.llvm.platform.base.1870137364" isAbstract="true" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.llvm.platform.base"/>
-							<builder autoBuildTarget="" buildPath="${workspace_loc:/newbuffers/Release}" cleanBuildTarget="" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="org.eclipse.cdt.build.core.internal.builder.1075836631" incrementalBuildTarget="" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelizationNumber="1" superClass="org.eclipse.cdt.build.core.internal.builder"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug.1726884615" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug"/>
-							<tool id="cdt.managedbuild.tool.llvm.archiver.base.153147599" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.c.linker.exe.debug.1648773469" name="LLVM C linker" superClass="cdt.managedbuild.tool.llvm.clang.linux.c.linker.exe.debug">
-								<option defaultValue="true" id="llvm.c.link.option.native.1481919760" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.778752315" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.cpp.linker.exe.debug.1910281806" name="LLVM C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.linux.cpp.linker.exe.debug">
-								<option defaultValue="true" id="llvm.c.link.option.native.443949195" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1466788596" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.982873645" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.c.compiler.exe.debug.101816171" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.linux.c.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1443695760" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.439975288" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.372479021" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1865858196" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.611148668" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.174130214" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.assembler.base.2123682482" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.assembler.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.c.linker.base.1567583694" name="LLVM C linker" superClass="cdt.managedbuild.tool.llvm.c.linker.base">
-								<option defaultValue="true" id="llvm.c.link.option.native.2036270798" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1249858211" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.cpp.linker.base.1869263130" name="LLVM C++ linker" superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
-								<option defaultValue="true" id="llvm.c.link.option.native.458086660" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1471893164" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-								<option id="llvm.c.link.option.libs.244260448" name="Libraries (-l)" superClass="llvm.c.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="stdc++"/>
-								</option>
-								<option id="llvm.c.link.option.paths.1604536662" name="Library search path (-L)" superClass="llvm.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/usr/lib/gcc/x86_64-linux-gnu/4.6/"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.122975836" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.c.compiler.base.619701829" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.758438847" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.84399632" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.cpp.compiler.base.831869383" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1678571754" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.1144445415" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.include.paths.1238178931" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.382460516" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.1027137701" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder buildPath="${workspace_loc:/reboost.org/Release}" id="org.eclipse.linuxtools.cdt.autotools.core.toolchain.builder.1572878334" superClass="org.eclipse.linuxtools.cdt.autotools.core.toolchain.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1235524449" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.826362837" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+								<option id="gnu.cpp.compiler.option.include.paths.2048560764" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/include/x86_64-linux-gnu"/>
 								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.1116878898" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
+								<option id="gnu.cpp.compiler.option.optimization.level.1142767384" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1501278724" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.275165253" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.2140357266" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.584139044" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.2036488601" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.481457958" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.447485248" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1309131964" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1588112565" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1324304407" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.43463486" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
 					<folderInfo id="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844" name="/" resourcePath="src/incubation">
-						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.linux.base.1058167189" name="LLVM with Clang (Linux)" superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base" unusedChildren="">
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.llvm.platform.base" isAbstract="true" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.llvm.platform.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.491802526" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1379082781" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.1765086606" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.1398928370" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.779776890" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.432891996" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1075421376" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+								<option id="gnu.cpp.compiler.option.optimization.level.1134994724" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1018218944" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.577226151" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.c.linker.exe.debug.1356953778" name="LLVM C linker" superClass="cdt.managedbuild.tool.llvm.clang.linux.c.linker.exe.debug">
-								<option defaultValue="true" id="llvm.c.link.option.native.1051452742" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.93747115" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.739121751" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.827154688" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.2132141626" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1822307318" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.archiver.base.133054209" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base.153147599"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.c.compiler.exe.debug.425243745" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.linux.c.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1540736533" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.31578726" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.cpp.linker.exe.debug.1445846216" name="LLVM C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.linux.cpp.linker.exe.debug">
-								<option defaultValue="true" id="llvm.c.link.option.native.851403889" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1165313943" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug.220980826" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug"/>
-							<tool id="cdt.managedbuild.tool.llvm.assembler.base.1651245460" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.assembler.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.c.linker.base.1775156768" name="LLVM C linker" superClass="cdt.managedbuild.tool.llvm.c.linker.base">
-								<option defaultValue="true" id="llvm.c.link.option.native.1765467061" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.901997125" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.cpp.linker.base.1700772614" name="LLVM C++ linker" superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
-								<option defaultValue="true" id="llvm.c.link.option.native.62762814" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.425873632" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.c.compiler.base.1424101132" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.758875226" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.999967139" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.cpp.compiler.base.940840076" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.1760136844" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.1002540832" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.1674507433" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1013762431" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1507313624" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1598961176" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2074812654" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -139,62 +88,32 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389" name="Debug" parent="cdt.managedbuild.config.llvm.clang.linux.exe.release">
 					<folderInfo id="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.llvm.clang.linux.base.249437288" name="LLVM with Clang (Linux)" superClass="cdt.managedbuild.toolchain.llvm.clang.linux.base">
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.llvm.platform.base.1451462880" isAbstract="true" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.llvm.platform.base"/>
-							<builder autoBuildTarget="" buildPath="${workspace_loc:/newbuffers/Debug}" cleanBuildTarget="" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="org.eclipse.cdt.build.core.internal.builder.1902032621" incrementalBuildTarget="" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelizationNumber="1" superClass="org.eclipse.cdt.build.core.internal.builder"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug.2098690846" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.clang.linux.assembler.exe.debug"/>
-							<tool id="cdt.managedbuild.tool.llvm.archiver.base.1902422432" name="LLVM archiver" superClass="cdt.managedbuild.tool.llvm.archiver.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.c.linker.exe.debug.371474467" name="LLVM C linker" superClass="cdt.managedbuild.tool.llvm.clang.linux.c.linker.exe.debug">
-								<option defaultValue="true" id="llvm.c.link.option.native.313366141" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.588542493" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.cpp.linker.exe.debug.1583096934" name="LLVM C++ linker" superClass="cdt.managedbuild.tool.llvm.clang.linux.cpp.linker.exe.debug">
-								<option defaultValue="true" id="llvm.c.link.option.native.326769663" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.1191008977" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.1401178389" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.c.compiler.exe.debug.1740401615" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.clang.linux.c.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.166993752" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.1346612746" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.1192803284" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.860343141" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.1980992551" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.1609121607" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.assembler.base.760093770" name="LLVM assembler" superClass="cdt.managedbuild.tool.llvm.assembler.base"/>
-							<tool id="cdt.managedbuild.tool.llvm.c.linker.base.538093086" name="LLVM C linker" superClass="cdt.managedbuild.tool.llvm.c.linker.base">
-								<option defaultValue="true" id="llvm.c.link.option.native.1376427631" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.948355772" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.cpp.linker.base.1005282936" name="LLVM C++ linker" superClass="cdt.managedbuild.tool.llvm.cpp.linker.base">
-								<option defaultValue="true" id="llvm.c.link.option.native.1462199960" name="Create native binary (with LLVM native code generator)" superClass="llvm.c.link.option.native" valueType="boolean"/>
-								<option defaultValue="false" id="llvm.c.link.option.nativeCBackEnd.245289679" name="Create native binary (with C backend code generator)" superClass="llvm.c.link.option.nativeCBackEnd" valueType="boolean"/>
-								<option id="llvm.c.link.option.libs.1929008089" name="Libraries (-l)" superClass="llvm.c.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="stdc++"/>
-								</option>
-								<option id="llvm.c.link.option.paths.1073824602" name="Library search path (-L)" superClass="llvm.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/usr/lib/gcc/x86_64-linux-gnu/4.6/"/>
-								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.c.linker.input.1289343012" superClass="cdt.managedbuild.tool.llvm.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.c.compiler.base.522268425" name="LLVM Clang" superClass="cdt.managedbuild.tool.llvm.c.compiler.base">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.62304307" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.816373316" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.llvm.cpp.compiler.base.1785850257" name="LLVM Clang++" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.base">
-								<option id="llvm.c_cpp.compiler.option.optimization.level.800114704" name="Optimization Level" superClass="llvm.c_cpp.compiler.option.optimization.level" value="llvm.c_cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.debugging.level.964249999" name="Debug Level" superClass="llvm.c_cpp.compiler.option.debugging.level" value="llvm.c_cpp.compiler.debugging.level.none" valueType="enumerated"/>
-								<option id="llvm.c_cpp.compiler.option.include.paths.964046479" name="Include paths (-I)" superClass="llvm.c_cpp.compiler.option.include.paths" valueType="includePath">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.38808344" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.1904389892" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder buildPath="${workspace_loc:/reboost.org/Debug}" id="org.eclipse.cdt.build.core.internal.builder.46291462" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1178111504" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.492850338" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+								<option id="gnu.cpp.compiler.option.include.paths.1245363927" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/include/x86_64-linux-gnu"/>
 								</option>
-								<inputType id="cdt.managedbuild.tool.llvm.cpp.compiler.input.1976060339" superClass="cdt.managedbuild.tool.llvm.cpp.compiler.input"/>
+								<option id="gnu.cpp.compiler.option.optimization.level.1032727447" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.776165506" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.774891796" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.61071883" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.option.optimization.level.443915912" superClass="gnu.c.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.1691540357" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1230274371" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.368349317" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.1007633829" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.431967206" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1437124076" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.612478235" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -217,29 +136,23 @@
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.llvm.cpp.compiler.base.166340618;cdt.managedbuild.tool.llvm.cpp.compiler.input.1308233782">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.gnu.c.compiler.base.786876667;cdt.managedbuild.tool.gnu.c.compiler.input.1193807663">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.889587697;cdt.managedbuild.tool.llvm.cpp.compiler.input.334533949">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.491802526;cdt.managedbuild.tool.llvm.cpp.compiler.input.1398928370">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.llvm.cpp.compiler.base.235908833;cdt.managedbuild.tool.llvm.cpp.compiler.input.1980416009">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844;cdt.managedbuild.tool.gnu.cpp.compiler.base.1075421376;cdt.managedbuild.tool.gnu.cpp.compiler.input.577226151">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.gnu.c.compiler.base.96886075;cdt.managedbuild.tool.gnu.c.compiler.input.593923945">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.cpp.compiler.base.532317715;cdt.managedbuild.tool.llvm.cpp.compiler.input.1631617788">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.release.1125723802;cdt.managedbuild.tool.llvm.cpp.compiler.input.1392023072">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1618190463;cdt.managedbuild.tool.gnu.cpp.compiler.input.891857010">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844;cdt.managedbuild.tool.llvm.cpp.compiler.base.940840076;cdt.managedbuild.tool.llvm.cpp.compiler.input.1674507433">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.cpp.compiler.base.532317715;cdt.managedbuild.tool.llvm.cpp.compiler.input.1631617788">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.cpp.compiler.base.831869383;cdt.managedbuild.tool.llvm.cpp.compiler.input.1116878898">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
@@ -247,29 +160,47 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1150692035;cdt.managedbuild.tool.gnu.cpp.compiler.input.773853279">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.gnu.cpp.compiler.base.827071683;cdt.managedbuild.tool.gnu.cpp.compiler.input.9771863">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1956161212;cdt.managedbuild.tool.llvm.cpp.compiler.base.313401701;cdt.managedbuild.tool.llvm.cpp.compiler.input.2135538912">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.372479021;cdt.managedbuild.tool.llvm.cpp.compiler.input.174130214">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.gnu.c.compiler.base.786876667;cdt.managedbuild.tool.gnu.c.compiler.input.1193807663">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.release.1125723802;cdt.managedbuild.tool.llvm.cpp.compiler.input.1392023072">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.gnu.c.compiler.base.736289998;cdt.managedbuild.tool.gnu.c.compiler.input.1037312548">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.1192803284;cdt.managedbuild.tool.llvm.cpp.compiler.input.1609121607">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.889587697;cdt.managedbuild.tool.llvm.cpp.compiler.input.334533949">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.llvm.cpp.compiler.base.235908833;cdt.managedbuild.tool.llvm.cpp.compiler.input.1980416009">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.372479021;cdt.managedbuild.tool.llvm.cpp.compiler.input.174130214">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844;cdt.managedbuild.tool.llvm.cpp.compiler.base.940840076;cdt.managedbuild.tool.llvm.cpp.compiler.input.1674507433">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.llvm.cpp.compiler.base.166340618;cdt.managedbuild.tool.llvm.cpp.compiler.input.1308233782">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.llvm.cpp.compiler.base.1785850257;cdt.managedbuild.tool.llvm.cpp.compiler.input.1976060339">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.491802526;cdt.managedbuild.tool.llvm.cpp.compiler.input.1398928370">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.gnu.cpp.compiler.base.826362837;cdt.managedbuild.tool.gnu.cpp.compiler.input.275165253">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.619844389.;cdt.managedbuild.tool.llvm.clang.linux.cpp.compiler.exe.debug.1192803284;cdt.managedbuild.tool.llvm.cpp.compiler.input.1609121607">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileClang++"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1956161212;cdt.managedbuild.tool.llvm.cpp.compiler.base.313401701;cdt.managedbuild.tool.llvm.cpp.compiler.input.2135538912">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.llvm.ui.LLVMManagedMakePerProjectProfileCPP"/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508;cdt.managedbuild.config.llvm.clang.linux.exe.debug.1131204508.;cdt.managedbuild.tool.gnu.cpp.compiler.base.827071683;cdt.managedbuild.tool.gnu.cpp.compiler.input.9771863">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.1843258844;cdt.managedbuild.tool.gnu.c.compiler.base.739121751;cdt.managedbuild.tool.gnu.c.compiler.input.1822307318">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197;cdt.managedbuild.config.llvm.clang.linux.exe.release.1213455197.;cdt.managedbuild.tool.gnu.c.compiler.base.2140357266;cdt.managedbuild.tool.gnu.c.compiler.input.481457958">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

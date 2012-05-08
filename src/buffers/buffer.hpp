@@ -17,7 +17,7 @@ typedef size_t bsize_t;
 typedef unsigned char boctet_t;
 
 /**
- * A basic buffer.
+ * A simple buffer.
  *
  * @author Sebastian Mies <mies@cpptools.org>
  */
@@ -130,7 +130,7 @@ public:
 	}
 
 	/// returns a hash value of this buffer using the ELF hash
-	size_t hash() const {
+	inline size_t hash() const {
 		unsigned h = 0, g;
 		for (size_t i = 0; i < size_; i++) {
 			h = (h << 4) + data_[i];
@@ -184,8 +184,15 @@ public:
 	}
 };
 
+/// stream operator
 std::ostream& operator<<( std::ostream& os, const buffer_t& buf );
 
 }
+
+/// boost hash
+namespace boost {
+inline size_t hash_value(const reboost::buffer_t& buf) {
+	return buf.hash();
+}}
 
 #endif /* BUFFER_HPP_ */

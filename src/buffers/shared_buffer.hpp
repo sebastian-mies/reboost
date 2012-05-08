@@ -120,7 +120,16 @@ public:
 		if (is_unique()) return;
 		boost::shared_ptr<deleteable_buffer> old = parent;
 		parent.reset(new deleteable_buffer(old->size()));
+		buffer_t::data(parent->mutable_data());
 		old->copy_to(*parent,0);
+	}
+
+	/// resize the shared buffer (and make unique)
+	inline void resize( bsize_t new_size ) {
+		boost::shared_ptr<deleteable_buffer> old = parent;
+		parent.reset(new deleteable_buffer(new_size));
+		buffer_t::data(parent->mutable_data());
+		(*old)(0,new_size).copy_to(*parent,0);
 	}
 
 	/// returns a pointer to mutable data, if shared_buffer is not shared yet.

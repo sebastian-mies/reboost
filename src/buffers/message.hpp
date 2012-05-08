@@ -223,7 +223,7 @@ public:
 	}
 
 	/// Returns a sub-message.
-	message_t operator()(size_t index, size_t size = 0) {
+	message_t operator()(size_t index, size_t size = 0) const {
 		message_t m;
 		struct sub_message sm = { &m };
 		foreach(sm, index, size);
@@ -298,9 +298,9 @@ private:
 
 			// find compacting candidate
 			bsize_t min_size=~0, min_pos=0;
-			for (size_t i=0; i<length; i++) {
+			for (mlength_t i=0; i<length; i++) {
 				bsize_t c = at(i).size() + at(i+1).size();
-				if (c < min_size || min_size == ~0 ) {
+				if (c < min_size || min_size == ~(bsize_t)0 ) {
 					min_size = c;
 					min_pos = i;
 				}
@@ -312,7 +312,7 @@ private:
 			at(min_pos+1).copy_to( nb, at(min_pos).size() );
 
 			// move buffers and assign new buffer
-			for (size_t i=min_pos+1; i<length; i++) at(i) = at(i+1);
+			for (mlength_t i=min_pos+1; i<length; i++) at(i) = at(i+1);
 			at(min_pos) = nb;
 
 			length--;
