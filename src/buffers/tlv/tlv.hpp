@@ -30,6 +30,7 @@ typedef size_t tlv_type_t;
 class tlv_t : public shared_buffer_t {
 private:
 	tlv_type_t type_;
+	typedef shared_buffer_t super;
 
 public:
 	/// base types
@@ -134,6 +135,12 @@ public:
 		}
 	}
 
+	/// compress tlv using miniz
+	void compress();
+
+	/// decompress tlv using miniz
+	void uncompress();
+
 	/// assign tlv
 	inline self& operator=(const self& rhs) {
 		shared_buffer_t::operator =(rhs);
@@ -197,6 +204,8 @@ public:
 	inline bool operator>=(const self& rhs) const {
 		return (compare_to(rhs) >= 0);
 	}
+
+
 
 	//-------------------------------------------------------------------------
 

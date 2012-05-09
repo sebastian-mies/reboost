@@ -183,9 +183,21 @@ public:
 /// stream operator
 std::ostream& operator<<( std::ostream& os, const tlv_list& set );
 
-/// add operator
+/// operator
 inline tlv_list& operator<<(tlv_list& lst, const tlv_t& tlv) {
 	lst.push_back(tlv);
+	return lst;
+}
+
+inline tlv_list operator+(const tlv_t& lhs, const tlv_t& rhs) {
+	tlv_list lst;
+	lst.push_back(lhs);
+	lst.push_back(rhs);
+	return lst;
+}
+
+inline tlv_list operator+( tlv_list lst, const tlv_t& rhs ) {
+	lst.push_back(rhs);
 	return lst;
 }
 

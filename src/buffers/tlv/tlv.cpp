@@ -6,17 +6,42 @@
 
 #include "tlv.hpp"
 #include "tlv_list.hpp"
+#include "internal/miniz.h"
 
 namespace reboost {
 
 using namespace std;
-
 
 // nil tlv
 const tlv_t tlv_t::nil;
 const tlv_t tlv_t::truetlv(tlv_t::TRUE,0,"");
 const tlv_t tlv_t::falsetlv(tlv_t::FALSE,0,"");
 
+
+// decompress tlv using miniz
+void tlv_t::uncompress() {
+	if(type_ != COMPRESSED) return;
+	shared_buffer_t c(size());
+	size_t sz;
+	int res = mz_uncompress((unsigned char *)c.mutable_data(), &sz, data(), size());
+	if (res==0) {
+		c.resize(sz);
+		*this = unpack(c);
+	}
+}
+
+// compress tlv using miniz
+void tlv_t::compress() {
+	shared_buffer_t p = pack();
+	shared_buffer_t c(p.size()*2);
+	size_t sz;
+	int res = mz_compress((unsigned char *)c.mutable_data(), &sz, p.data(), p.size());
+	if (res==0 && sz <= p.size()) {
+		type_ = COMPRESSED;
+		c.resize(sz);
+		super::operator=(c);
+	}
+}
 
 ostream& operator<<(ostream& os, const tlv_t& tlv) {
 	switch (tlv.type()) {
@@ -59,13 +84,16 @@ ostream& operator<<(ostream& os, const tlv_t& tlv) {
 		return os << list;
 	}
 
+	case tlv_t::COMPRESSED: {
+		return os << "(type=COMPRESSED size="<< tlv.size() <<")";
+	}
+
 	default: {
 		return os << "(type="<< tlv.type()
 				<< ":" << static_cast<const buffer_t>(tlv) << ")";
 	}
 	}
 }
-
 
 
 }

@@ -1,5 +1,8 @@
 Changelog of the reboost buffers
 
+2012-05-09; author: Sebastian Mies
++ added compression (miniz) to tlv
+
 2012-05-08; author: Sebastian Mies
 + fixed shared_buffer_t::make_unique()
 + added shared_buffer_t::resize()

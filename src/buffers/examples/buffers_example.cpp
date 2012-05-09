@@ -18,6 +18,12 @@ using namespace std;
 
 using namespace reboost;
 
+tlv_list test_concat() {
+	return tlv_t("Test")+tlv_t(1.25f)+tlv_t("Sebastian Mies");
+}
+
+
+
 int main() {
 	message_t m = (shared_buffer_t("Hello") + "World");
 	cout << m << endl;
@@ -35,6 +41,9 @@ int main() {
 	list.push_back( tlv_t::uint(8) );
 	list.push_back( tlv_t::uint(76) );
 	list.push_back( "Sebastian Mies" );
+	list.push_back( "Gebhardstraße 25" );
+	list.push_back( "76137 Karlsruhe" );
+	list.push_back( "76137 Karlsruhe kajdsflkjaslkfjlk adskjfasldf  adskfjf" );
 	list.push_back( 1.25f );
 	cout << list << endl;
 	shared_buffer_t buf = list.pack();
@@ -42,6 +51,10 @@ int main() {
 	tlv_list list2 = tlv_list::unpack(buf);
 	cout << list2 << endl;
 	tlv_t tlvx = tlv_t::unpack(buf);
+	cout << tlvx << endl;
+	tlvx.compress();
+	cout << tlvx << endl;
+	tlvx.decompress();
 	cout << tlvx << endl;
 
 	tlv_array arr(tlv_t::UINT, 4, 4);
@@ -61,13 +74,12 @@ int main() {
 
 	message_t msg;
 	tlv_list lst2;
-	lst2 << tlv_t("Test") << tlv_t(1.25f);
+	lst2 = test_concat();
 	msg << lst2;
 	cout << msg << endl;
 	tlv_t tlv1;
 	msg >> tlv1;
-	cout << tlv1;
-
+	cout << tlv1 << endl;
 
 	return 0;
 }

@@ -99,7 +99,7 @@ public:
 		tl[0] = 0xC0 | (a << 3) | b;
 		for (size_t i=0; i<a; i++) { tl[i + 1] = type & 255; type >>= 8; }
 		for (size_t i=0; i<b; i++) { tl[i + a + 2] = length & 255; length >>=8; }
-		return a+b+3;
+		return a+b+1;
 	}
 
 	/// convert to string

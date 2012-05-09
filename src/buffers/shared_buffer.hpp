@@ -19,7 +19,7 @@ namespace reboost {
  *
  * Important: if not shared, a buffer is writable. After the buffer is shared,
  * the buffer is immutable. It uses shared_ptr/default allocators and prints
- * error messages to <code>cerr</code> if buffers leaked at the end of the
+ * error messages to <tt>cerr</tt> if buffers leaked at the end of the
  * program.
  *
  * @author Sebastian Mies <mies@reboost.org>
@@ -130,6 +130,7 @@ public:
 		parent.reset(new deleteable_buffer(new_size));
 		buffer_t::data(parent->mutable_data());
 		(*old)(0,new_size).copy_to(*parent,0);
+		size_ = new_size;
 	}
 
 	/// returns a pointer to mutable data, if shared_buffer is not shared yet.
