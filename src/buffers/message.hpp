@@ -117,7 +117,7 @@ public:
 	/// Adds a message at the end of the message
 	inline void push_front(const message_t& msg) {
 		own();
-		for (mlength_t i = msg.length() - 1; i != 0; i--)
+		for (mlength_t i = msg.length() - 1; i >= 0; i--)
 			push_front(msg[i]);
 	}
 
@@ -141,7 +141,7 @@ public:
 
 	/// Returns the number of buffers inside this message.
 	inline mlength_t length() const {
-		return (imsg->length);
+		return imsg.get() ? imsg->length : 0;
 	}
 
 	/// Returns the buffer at the given index.
