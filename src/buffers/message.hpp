@@ -233,7 +233,8 @@ public:
 	/// Linearizes the complete/partial message into one shared buffer.
 	inline shared_buffer_t linearize(size_t index = 0, size_t size_ = 0) const {
 		shared_buffer_t b(size_ == 0 ? size() : size_);
-		read(b.mutable_data(), index, size_);
+		if (b.size() > 0)
+			read(b.mutable_data(), index, size_);
 		return b;
 	}
 
