@@ -117,7 +117,7 @@ public:
 	/// Adds a message at the end of the message
 	inline void push_front(const message_t& msg) {
 		own();
-		for (mlength_t i = msg.length() - 1; i != 0; i--)
+		for (mlength_t i = msg.length() - 1; i >= 0; i--)
 			push_front(msg[i]);
 	}
 
@@ -141,7 +141,7 @@ public:
 
 	/// Returns the number of buffers inside this message.
 	inline mlength_t length() const {
-		return (imsg->length);
+		return imsg.get() ? imsg->length : 0;
 	}
 
 	/// Returns the buffer at the given index.
@@ -171,11 +171,13 @@ public:
 		if (size_ == 0) size_ = size() - index_;
 
 		// get first buffer
-		mlength_t f = 0, pf = 0;
+		mlength_t f = 0;
+		size_t pf = 0;
 		for (; (pf + at(f).size()) <= index_ && f < imsg->length;
 				pf += at(f).size(), f++);
 		// get last buffer
-		mlength_t l = f, pl = pf;
+		mlength_t l = f;
+		size_t pl = pf;
 		for (; (pl + at(l).size()) < (index_ + size_) && l < imsg->length;
 				pl += at(l).size(), l++);
 
@@ -233,7 +235,8 @@ public:
 	/// Linearizes the complete/partial message into one shared buffer.
 	inline shared_buffer_t linearize(size_t index = 0, size_t size_ = 0) const {
 		shared_buffer_t b(size_ == 0 ? size() : size_);
-		read(b.mutable_data(), index, size_);
+		if (b.size() > 0)
+			read(b.mutable_data(), index, size_);
 		return b;
 	}
 
