@@ -171,11 +171,13 @@ public:
 		if (size_ == 0) size_ = size() - index_;
 
 		// get first buffer
-		mlength_t f = 0, pf = 0;
+		mlength_t f = 0;
+		size_t pf = 0;
 		for (; (pf + at(f).size()) <= index_ && f < imsg->length;
 				pf += at(f).size(), f++);
 		// get last buffer
-		mlength_t l = f, pl = pf;
+		mlength_t l = f;
+		size_t pl = pf;
 		for (; (pl + at(l).size()) < (index_ + size_) && l < imsg->length;
 				pl += at(l).size(), l++);
 
